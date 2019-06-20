@@ -1,2 +1,2 @@
-# flutter-notes-training
-Training project
+# Flutter Notes Training
+
