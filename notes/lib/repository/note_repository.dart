@@ -14,4 +14,7 @@ class NoteRepository {
     _noteDao.addNote(note);
   }
 
+  List<Note> getNotes() {
+    return _noteDao.getNotes();
+  }
 }

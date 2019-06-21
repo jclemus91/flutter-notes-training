@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../main.dart';
 import 'add_note_bloc.dart';
 
 class AddNoteScreen extends StatefulWidget {
