@@ -34,7 +34,15 @@ class _NotesScreenState extends State<NotesScreen> {
                 itemCount: notes.length,
                 itemBuilder: (context, position) {
                   Note note = notes[position];
-                  return Text("title: ${note.title}");
+                  return Card(
+                    child: InkWell(
+                      onTap: () {},
+                      child: Padding(
+                        padding: EdgeInsets.all(16),
+                        child: Text("${note.title}"),
+                      ),
+                    ),
+                  );
                 },
               );
             } else {

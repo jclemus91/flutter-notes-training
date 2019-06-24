@@ -18,6 +18,16 @@ class _AddNoteState extends State<AddNoteScreen> {
   final _addNoteBloc = AddNoteBloc(noteRepository);
   final _titleController = TextEditingController();
   final _messageController = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    _addNoteBloc
+    ..goBack.listen((data) {
+      if (Navigator.canPop(context)) {
+        Navigator.pop(context);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +60,9 @@ class _AddNoteState extends State<AddNoteScreen> {
               ),
               Row(
                 children: <Widget>[
-                  RaisedButton(child: Text("Cancel"), onPressed: () {}),
+                  RaisedButton(child: Text("Cancel"), onPressed: () {
+                    _addNoteBloc.closeAddNoteScreen();
+                  }),
                   SizedBox(
                     width: _padding,
                   ),
@@ -66,6 +78,7 @@ class _AddNoteState extends State<AddNoteScreen> {
 
   void _addNote(String title, String message) {
     _addNoteBloc.createNote(title, message);
+
   }
 
 }
