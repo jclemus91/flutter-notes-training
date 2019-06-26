@@ -16,4 +16,9 @@ class NoteDaoImpl extends NoteDao {
   List<Note> getNotes() {
     return _notesDB;
   }
+
+  @override
+  Note getNote(int position) {
+    return _notesDB[position];
+  }
 }
